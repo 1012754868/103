@@ -80,7 +80,7 @@ int get_input(int low, int high) {
       std::cout << "You didn't enter an integer!\n";
     } else {  // if it is an int, check whether in range
       guess = std::stoi(guess_string);  // convert to int
-      if (guess > low && guess < high) {
+      if (guess >= low && guess <=   high) {
         valid_input = true;
       } else {
         std::cout << "Input out of range!\n";

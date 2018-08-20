@@ -24,7 +24,7 @@ void parse_flags(int argc, char const *argv[]) {
   for (int i = 1; i < argc; i++) {
     // check for valid flags, use if,if,if rather than if,else if so we can
     // supply multiple (valid) flags
-    if (std::string(argv[i]) == "-u" || std::string(argv[i]) == "--usage") {
+    if (std::string(argv[i]) == "-h" || std::string(argv[i]) == "--help") {
       print_usage(argv);
       valid = true;
     }
@@ -57,7 +57,7 @@ void parse_flags(int argc, char const *argv[]) {
 void print_usage(char const *argv[]) {
   std::cout << "\nUsage: " << argv[0] << " FLAGS\n\n";
   std::cout << "Flags:\n\n-r,--radius RADIUS\tinput circle radius.\n";
-  std::cout << "-u,--usage\t\tprint usage instructions.\n";
+  std::cout << "-h,--help\t\tprint usage instructions.\n";
   std::cout << "-v,--version\t\tprint version number.\n\n";
 }
 
