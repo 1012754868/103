@@ -17,16 +17,16 @@ int main(int argc, char const *argv[]) {
 
   // beginning of game loop
   int n = get_random_number(low, high);
-  std::cout << n
-            << std::endl;  // for de-bugging only! Comment out to play properly
-  std::cout << "You need to guess the number in the range " << low << " to "
+  // for de-bugging only! Comment the line below to play properly!
+  // std::cout << n << std::endl;
+  std::cout << "\nYou need to guess the number in the range " << low << " to "
             << high << std::endl;
   int guess = get_input(low, high);
 
   if (guess == n) {
-    std::cout << "You've guess correctly! Winner!\n\n";
+    std::cout << "\nYou've guessed correctly! Winner!\n\n";
   } else {
-    std::cout << "Incorrect! Loser!\n\n";
+    std::cout << "\nIncorrect! Loser!\n\n";
   }
   // end of game loop
 
@@ -45,6 +45,7 @@ void print_line(int n) {
   for (int i = 0; i < n; i++) {
     std::cout << "#";
   }
+  std::cout << std::endl;
 }
 
 void print_word(std::string word) {
@@ -57,7 +58,7 @@ void print_word(std::string word) {
 
 void welcome() {
   print_line(80);
-  std::cout << "\n\n";
+  std::cout << "\n";
   print_word("Welcome to the Guessing Game!");
 }
 
@@ -80,7 +81,7 @@ int get_input(int low, int high) {
       std::cout << "You didn't enter an integer!\n";
     } else {  // if it is an int, check whether in range
       guess = std::stoi(guess_string);  // convert to int
-      if (guess >= low && guess <=   high) {
+      if (guess >= low && guess <= high) {
         valid_input = true;
       } else {
         std::cout << "Input out of range!\n";
