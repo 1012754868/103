@@ -27,17 +27,11 @@ int get_user_input() {
   int input;
   std::string input_string;
   bool valid_input = false;
-  int menu_items = 4;
+  int menu_items = 5;
 
   do {
     std::cout << "\nSelect item: ";
     std::cin >> input_string;
-
-    // first check for quit command
-    if (input_string == "Q" || input_string == "q") {
-      exit(EXIT_SUCCESS);
-    }
-
     valid_input = is_integer(input_string);
     // if input is not an integer, print an error message
     if (valid_input == false) {
@@ -71,19 +65,21 @@ void select_menu_item(int input) {
       menu_item_4();
       break;
     default:
-      std::cerr << "ERROR! Invalid menu selection!\n\n";
       exit(1);
       break;
   }
 }
 
 void print_main_menu() {
-  std::cout << "\n\n>Main menu:\n\n";
-  std::cout << "1) Menu item 1\n";
-  std::cout << "2) Menu item 2\n";
-  std::cout << "3) Menu item 3\n";
-  std::cout << "4) Menu item 4\n";
-  std::cout << "\nq or Q to quit.\n";
+  std::cout << "\n----------- Main menu -----------\n";
+  std::cout << "|\t\t\t\t|\n";
+  std::cout << "|\t1. Menu item 1\t\t|\n";
+  std::cout << "|\t2. Menu item 2\t\t|\n";
+  std::cout << "|\t3. Menu item 3\t\t|\n";
+  std::cout << "|\t4. Menu item 4\t\t|\n";
+  std::cout << "|\t5. Exit\t\t\t|\n";
+  std::cout << "|\t\t\t\t|\n";
+  std::cout << "---------------------------------\n";
 }
 
 void go_back_to_main() {
